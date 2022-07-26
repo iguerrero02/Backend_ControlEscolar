@@ -50,56 +50,14 @@ public class Materia implements Serializable{
 	@JoinColumn(name="FK_CICLO")
 	private Ciclo ciclo;
 
+
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 	
 
-
-	public Integer getPk_materia() {
-		return pk_materia;
-	}
-
-	public void setPk_materia(Integer pk_materia) {
-		this.pk_materia = pk_materia;
-	}
-
-	public String getClave() {
-		return clave;
-	}
-
-	public void setClave(String clave) {
-		this.clave = clave;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public Integer getEstatus() {
-		return estatus;
-	}
-
-	public void setEstatus(Integer estatus) {
-		this.estatus = estatus;
-	}
-/*
-	public Ciclo getCiclo() {
-		return ciclo;
-	}
-
-	public void setCiclo(Ciclo ciclo) {
-		this.ciclo = ciclo;
-	}
-*/
-	public Ciclo getCiclo() {
-		return ciclo;
-	}
-
-	public void setCiclo(Ciclo ciclo) {
-		this.ciclo = ciclo;
-	}
 
 
 	

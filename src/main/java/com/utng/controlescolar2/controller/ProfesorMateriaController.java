@@ -39,7 +39,7 @@ public class ProfesorMateriaController {
 		Response<ProfesorMateria> response = profesorMateriaService.consultaProfesorMateria();
 		return new ResponseEntity<Response<ProfesorMateria>>(response, HttpStatus.OK);
 	}
-	@PostMapping(path = "/buscarMateriaDinamica", 
+	@PostMapping(path = "/buscarMateriaProfesorDinamica", 
 			produces = MediaType.APPLICATION_JSON_VALUE, 
 			consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Response<ProfesorMateria>> busquedaDinamica(

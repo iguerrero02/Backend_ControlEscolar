@@ -67,14 +67,21 @@ private ConsultaProfesorMateriaRepository consultaProfesorMateriaRepository;
 	}
 	
 	@Override
-	public Response<ProfesorMateria> actualizar(ProfesorMateria Profesormateria) {
+	public Response<ProfesorMateria> actualizar(ProfesorMateria profesorMateria) {
 		Response<ProfesorMateria> response = new Response<ProfesorMateria>();
-		ProfesorMateria materiaNuevo=profesorMateriaRepository.save(Profesormateria);
+		ProfesorMateria materiaNuevo=profesorMateriaRepository.save(profesorMateria);
 		response.setStatus("OK");
 		response.setMessage("Guardado Correctamente");
 		response.setData(materiaNuevo);
 		return response;
 
+		/*Response<ProfesorMateria> response = new Response<ProfesorMateria>();
+		ProfesorMateria materiaNuevo=profesorMateriaRepository.save(Profesormateria);
+		response.setStatus("OK");
+		response.setMessage("Guardado Correctamente");
+		response.setData(materiaNuevo);
+		return response;
+*/
 	}
 	@Override
 	public Response<Profesor> consultaProfesor() {

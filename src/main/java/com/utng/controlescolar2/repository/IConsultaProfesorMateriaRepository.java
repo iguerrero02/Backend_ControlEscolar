@@ -8,4 +8,5 @@ public interface IConsultaProfesorMateriaRepository {
 
 	Response<ProfesorMateria>busquedaProfesorMateria(ProfesorMateriaFiltroRequest filtro);
 	
+	
 }

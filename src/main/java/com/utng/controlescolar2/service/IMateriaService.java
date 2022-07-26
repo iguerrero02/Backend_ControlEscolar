@@ -15,7 +15,7 @@ public interface IMateriaService {
 	
 	Response<Materia> buscarMateriaId(Integer idMateria);
 
-	Response<Integer> eliminarMateria(Integer idMateria);
+	Response<Integer> eliminarMateria(Integer pk_materia);
 
 	Response<Materia> actualizarMateria(MateriaRequest materia);
 

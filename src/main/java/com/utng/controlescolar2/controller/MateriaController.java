@@ -47,9 +47,9 @@ public class MateriaController {
 		return new ResponseEntity<Response<Materia>>(response, HttpStatus.OK);
 	}
 
-	@DeleteMapping(path = "/borrarMateriaPorID/{idMateria}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Response<Integer>> borrarMateriaPorID(@PathVariable("idMateria") Integer idMateria) {
-		Response<Integer> response = materiaService.eliminarMateria(idMateria);
+	@DeleteMapping(path = "/borrarMateriaPorID/{pk_materia}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Response<Integer>> borrarMateriaPorID(@PathVariable("pk_materia") Integer pk_materia) {
+		Response<Integer> response = materiaService.eliminarMateria(pk_materia);
 		return new ResponseEntity<Response<Integer>>(response, HttpStatus.OK);
 	}
 

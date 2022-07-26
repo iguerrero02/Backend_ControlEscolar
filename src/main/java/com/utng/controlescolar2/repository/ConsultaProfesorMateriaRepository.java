@@ -12,17 +12,18 @@ import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.utng.controlescolar2.model.Materia;
 import com.utng.controlescolar2.model.ProfesorMateria;
 import com.utng.controlescolar2.model.ProfesorMateriaFiltroRequest;
 import com.utng.controlescolar2.model.Response;
-
+@Repository
 public class ConsultaProfesorMateriaRepository implements IConsultaProfesorMateriaRepository {
 	@PersistenceContext
 	@Autowired (required=false)
 	private EntityManager entityManager;
-	/*
+	
 	@Override
 	public Response<ProfesorMateria> busquedaProfesorMateria(ProfesorMateriaFiltroRequest filtro) {
 		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
@@ -59,7 +60,7 @@ public class ConsultaProfesorMateriaRepository implements IConsultaProfesorMater
 								filtro.getCiclo()));
 
 	}
-/*if (filtro.getProfesor() != null && !filtro.getProfesor().isEmpty()) {
+if (filtro.getProfesor() != null && !filtro.getProfesor().isEmpty()) {
 
 			
 			predicados.add(
@@ -76,7 +77,7 @@ public class ConsultaProfesorMateriaRepository implements IConsultaProfesorMater
 			cq.where(pr);
 		}
 		
-		cq.orderBy(criteriaBuilder.desc(root.get("id")));
+		cq.orderBy(criteriaBuilder.desc(root.get("id_Pr_Ma_Fr")));
 		
 		CriteriaQuery<ProfesorMateria> select= cq.select(root);
 		
@@ -98,12 +99,6 @@ public class ConsultaProfesorMateriaRepository implements IConsultaProfesorMater
 		
 
 		return response;
-	}*/
-
-	@Override
-	public Response<ProfesorMateria> busquedaProfesorMateria(ProfesorMateriaFiltroRequest filtro) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 	}
 

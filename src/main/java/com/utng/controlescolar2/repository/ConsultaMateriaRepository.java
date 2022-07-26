@@ -65,13 +65,13 @@ public class ConsultaMateriaRepository implements IConsultaMateriaRepository {
 									root.get("pk_ciclo"), 
 									"%"+filtro.getPk_ciclo()+"%"));
 			}
-		if (filtro.getPk_profesor() != null && !filtro.getPk_profesor().isEmpty()) {
+		if (filtro.getProfesor() != null && !filtro.getProfesor().isEmpty()) {
 			
 			
 			predicados.add(
 					criteriaBuilder.like(
-							root.get("pk_profesor"), 
-							"%"+filtro.getPk_profesor()+"%"));
+							root.get("profesor"), 
+							"%"+filtro.getProfesor()+"%"));
 	}
 		
 		
@@ -81,7 +81,7 @@ public class ConsultaMateriaRepository implements IConsultaMateriaRepository {
 			cq.where(pr);
 		}
 		
-		cq.orderBy(criteriaBuilder.desc(root.get("id")));
+		cq.orderBy(criteriaBuilder.desc(root.get("pk_materia")));
 		
 		CriteriaQuery<Materia> select= cq.select(root);
 		

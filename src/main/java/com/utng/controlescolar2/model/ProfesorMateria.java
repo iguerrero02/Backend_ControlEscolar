@@ -14,6 +14,10 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lombok.Getter;
+import lombok.Setter;
+@Getter
+@Setter
 @Entity
 @Table(name="REL_TBL_PROFESOR_MATERIA")
 public class ProfesorMateria implements Serializable{
@@ -35,33 +39,12 @@ public class ProfesorMateria implements Serializable{
 	@JoinColumn(name="FK_MATERIA")
 	private Materia materia;
 
-	public Integer getPk_Pr_Mt() {
-		return pk_Pr_Mt;
-	}
-
-	public void setPk_Pr_Mt(Integer pk_Pr_Mt) {
-		this.pk_Pr_Mt = pk_Pr_Mt;
-	}
-
-	public Profesor getProfesor() {
-		return profesor;
-	}
-
-	public void setProfesor(Profesor profesor) {
-		this.profesor = profesor;
-	}
-
-	public Materia getMateria() {
-		return materia;
-	}
-
-	public void setMateria(Materia materia) {
-		this.materia = materia;
-	}
 
 	
-
 	
+	
+
+
 	
 	
 	
