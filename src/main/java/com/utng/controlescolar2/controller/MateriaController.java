@@ -36,7 +36,7 @@ public class MateriaController {
 	}
 
 	@PostMapping(path = "/guardarMateria", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Response<Materia>> guardarMateria(@RequestBody MateriaRequest materia) {
+	public ResponseEntity<Response<Materia>> guardarMateria(@RequestBody Materia materia) {
 		Response<Materia> response = materiaService.guardar(materia);
 		return new ResponseEntity<Response<Materia>>(response, HttpStatus.OK);
 	}

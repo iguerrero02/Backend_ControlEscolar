@@ -19,7 +19,7 @@ public interface MateriaRepository extends JpaRepository<Materia, Integer>{
 	
 	// Busqueda dinamica
 	@Query("select a from Materia a where a.nombre = ?1 or a.clave = ?1 or a.id=?1 "
-			+ "or a.estatus=?1")
+			+ "or a.status=?1")
 	List<Materia> consultaDinamica(@Param("dato") String dato);
 	
 	

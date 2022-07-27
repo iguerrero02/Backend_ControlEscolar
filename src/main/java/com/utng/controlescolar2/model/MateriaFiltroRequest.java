@@ -12,7 +12,7 @@ public class MateriaFiltroRequest {
 
 	private String clave;
 	private String nombre;
-	private String pk_ciclo;
+	private String ciclo;
 	private String profesor;
 
 	

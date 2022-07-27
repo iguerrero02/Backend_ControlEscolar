@@ -8,14 +8,14 @@ import lombok.Setter;
 public class ProfesorMateriaRequest {
 	
 private Integer id;
-private Integer pk_materia;
+private Integer idMateria;
 	
 	private String clave;
 	
 	private String nombre;
 	
 	private Integer estatus;
-	private Profesor pk_profesor;
-	private Ciclo pk_ciclo;
+	private Profesor profesor;
+	private Ciclo ciclo;
 	
 }

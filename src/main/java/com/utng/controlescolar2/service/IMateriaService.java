@@ -11,7 +11,7 @@ public interface IMateriaService {
 
 	Response<Materia> consultarTodos();
 
-	Response<Materia> guardar(MateriaRequest materia);
+	Response<Materia> guardar(Materia materia);
 	
 	Response<Materia> buscarMateriaId(Integer idMateria);
 

@@ -29,7 +29,7 @@ public class ProfesorMateria implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="PK_PR_MT")
-	private Integer pk_Pr_Mt;
+	private Integer idPrMt;
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="FK_PROFESOR")

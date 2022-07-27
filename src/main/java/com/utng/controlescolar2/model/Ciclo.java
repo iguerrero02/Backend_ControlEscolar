@@ -33,7 +33,7 @@ public class Ciclo implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="PK_CICLO")
-	private Integer pk_ciclo;
+	private Integer idCiclo;
 	
 	@Column(name="TXT_CLAVE")
 	private String clave;
@@ -57,67 +57,10 @@ public class Ciclo implements Serializable{
 
 	
 
-	public Integer getPk_ciclo() {
-		return pk_ciclo;
-	}
-
-	public void setPk_ciclo(Integer pk_ciclo) {
-		this.pk_ciclo = pk_ciclo;
-	}
-
-	public String getClave() {
-		return clave;
-	}
-
-	public void setClave(String clave) {
-		this.clave = clave;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public Integer getEstatus() {
-		return estatus;
-	}
-
-	public void setEstatus(Integer estatus) {
-		this.estatus = estatus;
-	}
-
-	public Integer getPeriodo() {
-		return periodo;
-	}
-
-	public void setPeriodo(Integer periodo) {
-		this.periodo = periodo;
-	}
-
 	
 
-	public Date getFechainicio() {
-		return fechainicio;
-	}
-
-	public void setFechainicio(Date fechainicio) {
-		this.fechainicio = fechainicio;
-	}
-
-	public Date getFechafin() {
-		return fechafin;
-	}
-
-	public void setFechafin(Date fechafin) {
-		this.fechafin = fechafin;
-	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
+	
+	
 
 	
 

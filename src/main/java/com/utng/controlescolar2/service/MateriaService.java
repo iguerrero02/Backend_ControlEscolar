@@ -16,6 +16,7 @@ import com.utng.controlescolar2.model.MateriaFiltroRequest;
 import com.utng.controlescolar2.model.MateriaRequest;
 import com.utng.controlescolar2.model.ProfesorMateria;
 import com.utng.controlescolar2.model.Response;
+import com.utng.controlescolar2.model.Status;
 import com.utng.controlescolar2.repository.CicloRepository;
 import com.utng.controlescolar2.repository.ConsultaMateriaRepository;
 import com.utng.controlescolar2.repository.MateriaRepository;
@@ -50,15 +51,15 @@ public class MateriaService implements IMateriaService {
 	}
 
 	@Override
-	public Response<Materia> guardar(MateriaRequest materia) {
+	public Response<Materia> guardar(Materia materia) {
 		Response<Materia> response = new Response<Materia>();
-		/*Materia materiaNuevo=materiaRepository.save(materia);
+		Materia materiaNuevo=materiaRepository.save(materia);
+		response.setMessage("Se guardo correctamente");
 		response.setStatus("OK");
-		response.setMessage("Materia no existe");
 		response.setData(materiaNuevo);
-		*/
-
-		Optional<Ciclo> optional = cicloRepository.findById(materia.getPk_ciclo());
+		
+/*
+		Optional<Ciclo> optional = cicloRepository.save(materia.getCiclo());
 		Ciclo ciclo = null;
 		Materia materia1 = null;
 		Materia materia2 = null;
@@ -79,7 +80,7 @@ public class MateriaService implements IMateriaService {
 			response.setStatus("ERROR");
 			response.setMessage("Ciclo no existe");
 			response.setData(null);
-		}
+		}*/
 
 		return response;
 	}
@@ -127,8 +128,9 @@ public class MateriaService implements IMateriaService {
 		response.setMessage("Materia no existe");
 		response.setData(materiaAct);*/
 
-		Optional<Ciclo> optional = cicloRepository.findById(materia.getPk_ciclo());
+		Optional<Ciclo> optional = cicloRepository.findById(materia.getCiclo());
 		Ciclo ciclo = null;
+		Status status=null;
 		Materia materia1 = null;
 		Materia materia2 = null;
 
@@ -140,10 +142,10 @@ public class MateriaService implements IMateriaService {
 				
 				materia1 = new Materia();
 				
-				materia1.setPk_materia(materia.getPk_materia());
+				materia1.setIdMateria(materia.getMateria());
 				materia1.setClave(materia.getClave());
 				materia1.setCiclo(ciclo);
-				materia1.setEstatus(materia.getEstatus());
+				materia1.setStatus(status);
 				materia1.setNombre(materia.getNombre());
 			
 				

@@ -33,15 +33,13 @@ public class Profesor implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="PK_PROFESOR")
-	private Integer pk_profesor;
+	private Integer idProfesor;
 	
-	//@OneToOne(fetch = FetchType.LAZY, mappedBy = "MASTER_TBL_PROFESOR")
-	//private ProfesorMateria profesorMateria;
 	@Column(name="TXT_CLAVE")
 	private String clave;
 	
 	@Column(name="TXT_NOMBRE")
-	private String nombreP;
+	private String nombre;
 	
 	@Column(name="TXT_APE_PATERNO")
 	private String apePaterno;
@@ -52,10 +50,7 @@ public class Profesor implements Serializable{
 	@Column(name="TXT_CORREO")
 	private String correo;
 
-	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+
 
 
 

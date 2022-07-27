@@ -31,10 +31,15 @@ import lombok.Setter;
 @Table(name= "MASTER_TBL_MATERIA")
 public class Materia implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="PK_MATERIA")
-	private Integer pk_materia;
+	private Integer idMateria;
 	
 	@Column(name="TXT_CLAVE")
 	private String clave;
@@ -42,21 +47,26 @@ public class Materia implements Serializable{
 	@Column(name="DES_MATERIA")
 	private String nombre;
 	
-	@Column(name="FK_STATUS")
-	private Integer estatus;
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="FK_STATUS")
+	private Status status;
 	
 	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="FK_CICLO")
-	private Ciclo ciclo;
-
-
-	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	public Ciclo ciclo;
 
 	
+	
+	public Profesor profesor;
+	
+	/*
+	public Materia(String Ciclo) {
+		Ciclo=Ciclo;
+		
+		
+	}
+	*/
 
 
 
