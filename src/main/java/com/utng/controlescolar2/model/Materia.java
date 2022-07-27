@@ -58,7 +58,6 @@ public class Materia implements Serializable{
 
 	
 	
-	public Profesor profesor;
 	
 	/*
 	public Materia(String Ciclo) {
