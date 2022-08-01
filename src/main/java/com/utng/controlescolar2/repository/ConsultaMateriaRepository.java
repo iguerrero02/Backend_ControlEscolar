@@ -57,13 +57,13 @@ public class ConsultaMateriaRepository implements IConsultaMateriaRepository {
 							"%"+filtro.getNombre()+"%"));
 		}
 		
-		if (filtro.getCiclo() != null && !filtro.getCiclo().isEmpty()) {
+		if (filtro.getCiclo() != null ){
 		
 					
 					predicados.add(
-							criteriaBuilder.like(
+							criteriaBuilder.equal(
 									root.get("ciclo"), 
-									"%"+filtro.getCiclo()+"%"));
+								filtro.getCiclo()));
 			}
 		if (filtro.getProfesor() != null && !filtro.getProfesor().isEmpty()) {
 			
