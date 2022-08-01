@@ -109,5 +109,16 @@ private ConsultaProfesorMateriaRepository consultaProfesorMateriaRepository;
 		return response;
 	
 	}
+	@Override
+	public Response<Integer> eliminarMateriaProfe(Integer idPrMt) {
+		Response<Integer> response = new Response<Integer>();
+profesorMateriaRepository.deleteById(idPrMt);
+response.setData(idPrMt);
+response.setMessage("Eliminación correcta");
+response.setStatus("OK");
+		
+		
+		return response;
+	}
 }
 

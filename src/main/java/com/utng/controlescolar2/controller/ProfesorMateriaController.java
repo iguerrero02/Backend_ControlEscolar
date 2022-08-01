@@ -5,13 +5,17 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.utng.controlescolar2.model.Grupo;
+import com.utng.controlescolar2.model.GrupoFiltroRequest;
 import com.utng.controlescolar2.model.Materia;
 import com.utng.controlescolar2.model.MateriaFiltroRequest;
 import com.utng.controlescolar2.model.Profesor;
@@ -20,6 +24,7 @@ import com.utng.controlescolar2.model.ProfesorMateriaFiltroRequest;
 import com.utng.controlescolar2.model.ProfesorMateriaRequest;
 import com.utng.controlescolar2.model.Response;
 import com.utng.controlescolar2.service.IProfesorMateriaService;
+import com.utng.controlescolar2.service.ProfesorMateriaService;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -38,7 +43,7 @@ public class ProfesorMateriaController {
 	public ResponseEntity<Response<ProfesorMateria>>consultarProfesorMateria() {
 		Response<ProfesorMateria> response = profesorMateriaService.consultaProfesorMateria();
 		return new ResponseEntity<Response<ProfesorMateria>>(response, HttpStatus.OK);
-	}
+	}/*
 	@PostMapping(path = "/buscarMateriaProfesorDinamica", 
 			produces = MediaType.APPLICATION_JSON_VALUE, 
 			consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -46,7 +51,7 @@ public class ProfesorMateriaController {
 			@RequestBody ProfesorMateriaFiltroRequest filtro) {
 		Response<ProfesorMateria> response = profesorMateriaService.busquedaDinamica(filtro);
 		return new ResponseEntity<Response<ProfesorMateria>>(response, HttpStatus.OK);
-	}
+	}*/
 	@PutMapping(path = "/actMateriaProfe", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Response<ProfesorMateria>> actualizarMateria(@RequestBody ProfesorMateria Profesormateria) {
 		Response<ProfesorMateria> response = profesorMateriaService.actualizar(Profesormateria);
@@ -60,6 +65,18 @@ public class ProfesorMateriaController {
 	@PostMapping(path = "/guardarMateriaProfe", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Response<ProfesorMateria>> guardarMateria(@RequestBody ProfesorMateria Profesormateria) {
 		Response<ProfesorMateria> response = profesorMateriaService.guardar(Profesormateria);
+		return new ResponseEntity<Response<ProfesorMateria>>(response, HttpStatus.OK);
+	}
+	@DeleteMapping(path = "/borrarMateriaProfesorPorID/{idPrMt}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Response<Integer>> borrarMateriaPorID(@PathVariable("idPrMt") Integer idPrMt) {
+		Response<Integer> response = profesorMateriaService.eliminarMateriaProfe(idPrMt);
+		return new ResponseEntity<Response<Integer>>(response, HttpStatus.OK);
+	}
+	@PostMapping(path = "/busquedaDinamica",
+			produces = MediaType.APPLICATION_JSON_VALUE,
+	consumes = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Response<ProfesorMateria>> busquedaDinamica(@RequestBody ProfesorMateriaFiltroRequest profesorMateriaFiltroRequest) {
+		Response<ProfesorMateria> response = profesorMateriaService.busquedaDinamica(profesorMateriaFiltroRequest);
 		return new ResponseEntity<Response<ProfesorMateria>>(response, HttpStatus.OK);
 	}
 }

@@ -56,6 +56,12 @@ public class Materia implements Serializable{
 	@JoinColumn(name="FK_CICLO")
 	public Ciclo ciclo;
 
+
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 	
 	
 	

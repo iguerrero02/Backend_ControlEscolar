@@ -50,6 +50,11 @@ public class Profesor implements Serializable{
 	@Column(name="TXT_CORREO")
 	private String correo;
 
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 
 
 

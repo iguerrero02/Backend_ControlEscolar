@@ -1,6 +1,8 @@
 package com.utng.controlescolar2.service;
 
 
+import com.utng.controlescolar2.model.Grupo;
+import com.utng.controlescolar2.model.GrupoFiltroRequest;
 import com.utng.controlescolar2.model.Materia;
 import com.utng.controlescolar2.model.Profesor;
 import com.utng.controlescolar2.model.ProfesorMateria;
@@ -20,6 +22,8 @@ public interface IProfesorMateriaService {
 	Response<ProfesorMateria> guardar(ProfesorMateria Profesormateria);
 
 	Response<Profesor>consultaProfesor();
+
+	Response<Integer> eliminarMateriaProfe(Integer idPrMt);
 
 	
 	

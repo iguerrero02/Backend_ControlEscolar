@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Expression;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
@@ -42,6 +43,7 @@ public class ConsultaProfesorMateriaRepository implements IConsultaProfesorMater
 			
 			
 		}
+		
 		if (filtro.getNombre() != null && !filtro.getNombre().isEmpty()) {
 
 			
@@ -55,9 +57,9 @@ public class ConsultaProfesorMateriaRepository implements IConsultaProfesorMater
 		
 					
 					predicados.add(
-							criteriaBuilder.equal(
+							criteriaBuilder.like(
 									root.get("ciclo"), 
-								filtro.getCiclo()));
+								"%"+ filtro.getCiclo()+"%"));
 
 	}
 if (filtro.getProfesor() != null && !filtro.getProfesor().isEmpty()) {
@@ -77,7 +79,7 @@ if (filtro.getProfesor() != null && !filtro.getProfesor().isEmpty()) {
 			cq.where(pr);
 		}
 		
-		cq.orderBy(criteriaBuilder.desc(root.get("id_Pr_Ma_Fr")));
+		cq.orderBy(criteriaBuilder.desc(root.get("idPrMt")));
 		
 		CriteriaQuery<ProfesorMateria> select= cq.select(root);
 		

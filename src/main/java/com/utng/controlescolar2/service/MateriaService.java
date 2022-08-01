@@ -107,12 +107,12 @@ public class MateriaService implements IMateriaService {
 	}
 
 	@Override
-	public Response<Integer> eliminarMateria(Integer pk_materia) {
+	public Response<Integer> eliminarMateria(Integer idMateria) {
 
 		Response<Integer> response = new Response<Integer>();
 
-		materiaRepository.deleteById(pk_materia);
-		response.setData(pk_materia);
+		materiaRepository.deleteById(idMateria);
+		response.setData(idMateria);
 		response.setMessage("Eliminación correcta");
 		response.setStatus("OK");
 
